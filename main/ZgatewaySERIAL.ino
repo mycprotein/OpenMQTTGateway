@@ -48,12 +48,17 @@ const TickType_t semaphoreTimeout = pdMS_TO_TICKS(1000); // 1 second timeout
 #    define SEMAPHORE_SERIAL_GIVE
 #  endif
 
+#  ifdef SENDER_SERIAL_HEARTBEAT
+bool receiverReady = false;
+#  else
+bool receiverReady = true;
+#  endif
+
 // use pointer to stream class for serial communication to make code
 // compatible with both softwareSerial as hardwareSerial.
 Stream* SERIALStream = NULL;
 //unsigned long msgCount = 0;
 
-bool receiverReady = false;
 unsigned long lastHeartbeatReceived = 0;
 unsigned long lastHeartbeatAckReceived = 0;
 unsigned long lastHeartbeatSent = 0;
