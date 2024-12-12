@@ -68,15 +68,15 @@ extern bool XtoSERIAL(const char* topicOri, JsonObject& SERIALdata);
 // settings for MQTT to SERIAL
 #define subjectMQTTtoSERIAL "/commands/MQTTtoSERIAL"
 #ifndef SERIALPre
-#  define SERIALPre "00" // The prefix for the SERIAL message
+#  define SERIALPre "" // The prefix for the SERIAL message
 #endif
 #ifndef SERIALPost
-#  define SERIALPost "\r" // The postfix for the SERIAL message
+#  define SERIALPost "" // The postfix for the SERIAL message
 #endif
 
 //Setup for SERIAL
 #ifndef SERIALBaud
-#  define SERIALBaud 9600 // The serial connection Baud
+#  define SERIALBaud 115200 // The serial connection Baud
 #endif
 
 /*-------------------PIN DEFINITIONS----------------------*/
@@ -123,7 +123,7 @@ extern bool XtoSERIAL(const char* topicOri, JsonObject& SERIALdata);
 #  if defined(ESP8266) && !defined(SERIAL_UART)
 #    define SERIAL_RX_GPIO 4 //D2
 #  elif defined(ESP32)
-#    define SERIAL_RX_GPIO 26
+#    define SERIAL_RX_GPIO 9
 #  endif
 #endif
 
@@ -132,7 +132,7 @@ extern bool XtoSERIAL(const char* topicOri, JsonObject& SERIALdata);
 #  if defined(ESP8266) && !defined(SERIAL_UART)
 #    define SERIAL_TX_GPIO 2 //D4
 #  elif ESP32
-#    define SERIAL_TX_GPIO 14
+#    define SERIAL_TX_GPIO 10
 #  endif
 #endif
 

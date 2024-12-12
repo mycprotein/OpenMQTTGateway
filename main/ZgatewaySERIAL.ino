@@ -53,7 +53,7 @@ const TickType_t semaphoreTimeout = pdMS_TO_TICKS(1000); // 1 second timeout
 Stream* SERIALStream = NULL;
 //unsigned long msgCount = 0;
 
-bool receiverReady = false;
+bool receiverReady = true;
 unsigned long lastHeartbeatReceived = 0;
 unsigned long lastHeartbeatAckReceived = 0;
 unsigned long lastHeartbeatSent = 0;
